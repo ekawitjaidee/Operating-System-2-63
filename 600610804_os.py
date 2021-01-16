@@ -4,10 +4,8 @@ import random
 
 def initial_process(pc_n,sec_1,sec_2):
   pc = []
-
   ps1 = round((pc_n/100)*sec_1)
   ps2 = ps1 + int((pc_n/100)*sec_2)
-
 
   for i in range(pc_n+1):
     try:
@@ -24,8 +22,6 @@ def initial_process(pc_n,sec_1,sec_2):
 
   random.shuffle(pc)
   return pc
-
-
 
 def Fcfs(pc):
   waiting = 0
@@ -64,7 +60,6 @@ def Sjf(pc):
   print('Average = ',waiting/len(pc))
   print('-----------------------')
   return wt
-  
 
 def RR(pc, qt):
   wait = 0 
@@ -119,7 +114,6 @@ qt = 4 #quantum time for Round Robin algorithms
 hypothesis1 = initial_process(60,70,20) #(Number of process, Percent of process bursttime in range (2,8),* in range(20,30))
 hypothesis2 = initial_process(40,50,30)
 hypothesis3 = initial_process(20,40,40)
-
 
 #Hypythesis1
 wt_fcfs = Fcfs(hypothesis1)
