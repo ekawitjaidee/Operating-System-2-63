@@ -21,8 +21,9 @@ def initial_process(pc_n,sec_1,sec_2):
         pc.append((i,random.randint(35,40)))
     except:
       print('err at',i)
-
+  print('process before shuffle : ',pc)
   random.shuffle(pc)
+  print('process after shuffle : ',pc)
   return pc
 
 
@@ -40,9 +41,8 @@ def Fcfs(pc):
       print('  P'+str(pc[i][0]),'       ',waiting)
       wt.append(waiting)
       waiting+=pc[i][1]
-  wtavg = waiting-pc[-1][1]
   print('-----------------------')
-  print('Average = ',wtavg/len(pc))
+  print('Average = ',sum(wt)/len(pc))
   print('-----------------------')
   return wt
   
@@ -59,9 +59,8 @@ def Sjf(pc):
       print('  P'+str(pc[i][0]),'       ',waiting)
       wt.append(waiting)
       waiting+=pc[i][1]
-  wtavg = waiting-pc[-1][1]
   print('-----------------------')
-  print('Average = ',waiting/len(pc))
+  print('Average = ',sum(wt)/len(pc))
   print('-----------------------')
   return wt
   
@@ -93,11 +92,10 @@ def RR(pc, qt):
           print('  P'+str(pc[i][0]),'       ',wait)
           wt.append(wait)
         wait+=pc[i][1]
-    wtavg = wait-pc[-1][1]
     pc=lst
     
   print('-----------------------')
-  print('Average = ',wtavg/lpc)
+  print('Average = ',sum(wt)/lpc)
   print('-----------------------')
   return wt
 
